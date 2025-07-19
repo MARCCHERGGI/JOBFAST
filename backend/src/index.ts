@@ -26,5 +26,9 @@ app.post('/api/resume', async ({ request }) => {
 
 app.post('/api/checkout', handleStripe);
 
-app.listen(3000);
-console.log('API running on http://localhost:3000');
+// ✅ Use dynamic port for Render compatibility
+app.listen({
+  port: process.env.PORT || 3000
+});
+
+console.log(`API running on http://localhost:${process.env.PORT || 3000}`);
