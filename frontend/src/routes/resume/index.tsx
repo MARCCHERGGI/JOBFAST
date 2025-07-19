@@ -38,16 +38,16 @@ export default component$(() => {
 
   return (
     <div class="p-4 space-y-4">
-      <header class="flex justify-between text-gold font-bold">
+      <header class="flex justify-between text-gold font-bold glass p-4">
         <Link href="/">Home</Link>
         <h1>Resume Builder</h1>
         <div></div>
       </header>
-      <form preventdefault:submit class="space-y-2" onSubmit$={buildResume as QRL<() => void>}>
-        <input class="w-full p-2 rounded bg-gray-800" placeholder="Name" bind:value={state.name} />
-        <input class="w-full p-2 rounded bg-gray-800" placeholder="Desired Job Title" bind:value={state.job} />
-        <input class="w-full p-2 rounded bg-gray-800" placeholder="Location" bind:value={state.location} />
-        <button class="px-4 py-2 bg-gold text-black rounded">Generate PDF</button>
+      <form preventdefault:submit class="space-y-2 glass p-4" onSubmit$={buildResume as QRL<() => void>}>
+        <input class="w-full p-2 rounded bg-transparent" placeholder="Name" bind:value={state.name} />
+        <input class="w-full p-2 rounded bg-transparent" placeholder="Desired Job Title" bind:value={state.job} />
+        <input class="w-full p-2 rounded bg-transparent" placeholder="Location" bind:value={state.location} />
+        <button class="px-4 py-2 bg-gold text-black rounded w-full">Generate PDF</button>
       </form>
       {state.pdfUrl && (
         <a href={state.pdfUrl} class="text-gold underline">Download Resume</a>

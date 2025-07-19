@@ -36,7 +36,7 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col h-screen">
-      <header class="p-4 text-gold font-bold flex justify-between">
+      <header class="p-4 text-gold font-bold flex justify-between glass mb-2">
         <Link href="/">Home</Link>
         <h1>Interview</h1>
         <div></div>
@@ -44,15 +44,15 @@ export default component$(() => {
       <main class="flex-1 overflow-y-auto space-y-2 p-4">
         {state.messages.map((m, i) => (
           <div key={i} class={m.role === 'user' ? 'text-right' : 'text-left'}>
-            <span class="px-3 py-2 rounded bg-gray-700 inline-block max-w-xs">
+            <span class="px-3 py-2 rounded glass inline-block max-w-xs">
               {m.content}
             </span>
           </div>
         ))}
         {state.loading && <div class="text-left">...</div>}
       </main>
-      <form preventdefault:submit class="p-4 flex" onSubmit$={sendMessage as QRL<() => void>}>
-        <input id="message-input" class="flex-1 bg-gray-800 p-2 rounded" bind:value={state.input} />
+      <form preventdefault:submit class="p-4 flex glass" onSubmit$={sendMessage as QRL<() => void>}>
+        <input id="message-input" class="flex-1 bg-transparent p-2 focus:outline-none" bind:value={state.input} />
         <button class="ml-2 px-4 py-2 bg-gold text-black rounded" disabled={state.loading}>Send</button>
       </form>
     </div>
