@@ -1,0 +1,6 @@
+{
+  "extends": "@builder.io/qwik-city/tsconfig",
+  "compilerOptions": {
+    "types": ["vite/client"]
+  }
+}
