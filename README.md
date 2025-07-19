@@ -36,6 +36,24 @@ environment variable to point to your API endpoint.
 
 The backend reads `OPENAI_API_KEY` for talking to OpenAI.
 
+## Deploy
+
+To run the frontend on Vercel using the Edge adapter:
+
+1. Install dependencies and build the frontend
+
+```bash
+npm --workspace frontend run build
+```
+
+2. Configure Vercel with:
+   - Framework: **Other**
+   - Root Directory: `frontend`
+   - Build Command: `npm run build`
+   - Output Directory: `.vercel/output`
+
+This ensures all routes render correctly without 404 errors.
+
 ## Cons
 
 This MVP uses OpenAI for the AI responses which may incur API costs. Offline

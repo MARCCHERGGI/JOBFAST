@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "qwik dev",
-    "build": "qwik build",
+    "build": "npm run build.client && npm run build.server",
+    "build.client": "qwik build",
+    "build.server": "vite build",
     "preview": "qwik preview"
   },
   "dependencies": {
@@ -11,6 +13,7 @@
     "@builder.io/qwik-city": "^1.14.1",
     "@builder.io/qwik-react": "^0.5.6",
     "clsx": "^2.1.1",
+    "ignore": "^7.0.5",
     "openai": "^4.104.0"
   },
   "devDependencies": {
