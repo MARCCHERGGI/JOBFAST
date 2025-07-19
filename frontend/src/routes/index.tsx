@@ -1,19 +1,16 @@
-import { component$ } from '@builder.io/qwik';
-import { Link, useDocumentHead } from '@builder.io/qwik-city';
+// src/routes/index.tsx
+import { Link } from "react-router-dom";
 
-export default component$(() => {
-  useDocumentHead({
-    title: 'AI for Restaurant Jobs',
-    meta: [{ name: 'description', content: 'Smarter Interviews. Tailored Resumes.' }],
-  });
+export default function HomePage() {
   return (
-    <div class="min-h-screen flex flex-col items-center justify-center p-4 text-center space-y-4">
-      <h1 class="text-3xl font-bold text-gold">ShiftAI</h1>
-      <p>Smarter Interviews. Tailored Resumes.</p>
-      <div class="space-x-4">
-        <Link href="/interview" class="px-4 py-2 bg-gold text-black rounded">Start Interview</Link>
-        <Link href="/resume" class="px-4 py-2 bg-gold text-black rounded">Build Resume</Link>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-6 text-center">
+      <h1 className="text-4xl font-bold mb-6">Shift AI – Get Hired Faster</h1>
+      <Link to="/interview" className="bg-white text-black px-6 py-3 rounded-lg mb-4">
+        Start Interview
+      </Link>
+      <Link to="/resume" className="border border-white px-6 py-3 rounded-lg">
+        Build Resume
+      </Link>
     </div>
   );
-});
+}
