@@ -1,0 +1,5 @@
+{
+  "name": "shift-ai",
+  "private": true,
+  "workspaces": ["frontend", "backend"]
+}
